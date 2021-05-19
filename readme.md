@@ -1,72 +1,118 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Mini Aspire
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+# Steps to run  the project
 
-## About Laravel
+- Clone the Repo
+- Run php artisan migrate
+- Run php atisan serve
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Register User Endpoint (POST /api/register)
+| Field | Type |
+| ------ | ------ |
+| email | Unique Email address |
+| name | String|
+| password | String |
+| password_confirmation | String |
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```sh
+Sample Response
+{
+    "user": {
+        "name": "Altamash",
+        "email": "altu9595@gmail.com",
+        "updated_at": "2021-05-19 17:56:31",
+        "created_at": "2021-05-19 17:56:31",
+        "id": 2
+    },
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjMyM2NmOGY2MWFmOTBmZmVmOWVmOTJkNTkzYjE0NGU4YTkyMGZmM2Q0YzFkYmE4OWM4NTgyMjg0NTBhMjFiZDk3ZmY5NGQ3MmFlMWQ1OTkzIn0.eyJhdWQiOiIxIiwianRpIjoiMzIzY2Y4ZjYxYWY5MGZmZWY5ZWY5MmQ1OTNiMTQ0ZThhOTIwZmYzZDRjMWRiYTg5Yzg1ODIyODQ1MGEyMWJkOTdmZjk0ZDcyYWUxZDU5OTMiLCJpYXQiOjE2MjE0NDY5OTEsIm5iZiI6MTYyMTQ0Njk5MSwiZXhwIjoxNjUyOTgyOTkxLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.Oo8m1IlsXUvrPcFD2DBFdPn2iNFdBJMEDmgP3rJOk384Qd8HMPMuvjVq1V8fIzNNLOWuHnvHrznCJKkV9T_84kHDbbo-ktgGmaUcyevqlL6un9xawzCoKvIBdY-_owqs5Pgw5Hoxj0Kbwy8uMPmk5J-pAz0j_aCqfV1K10lll5xV7RoGUh1hGKnhaYORRIWcAXwIasi04neF559_rdsbEppIBlGIQZbhw_OafuYrt6LAaXnBXLpT2O4lIhP4UFvIa3eXQS73U-HtLkt187NECBj2VGVjBxqfnlaMoeks-J0aC86D2oeXcV73yrNe3EM0zhJE-Wu9mgqfFPTUovbqDtoyZ8gQ0m-REhUCo8NnSi7p6HcRf5uK8iCCQ33F-1OEYa4X7o3bXndtxIOMLYoosAuxxoKygGMA5ecnrz2GQlr0Q_7IG89PB71QTrzsMKlXGjbG8RprDMjTDMlYJZsK3VT6vaDqpEK-YKtihaII2tJbGq5HcNHwDqF-1H79nXuoCLUlz5yO2GYOih8qeV2WrDlR8z68bW-KrmjWe2mlB6-USMloFgU8G54e-BdmoLiFYgs5Ub2oT2yFcuA5SPHHRNs29CCdMC1gfaxdsRlMOZsxxzgj5A4MAxiPjmaxBlvHaPQnhwjevL90gqof4WHLH77xrCHe36Vz4eNcuMzxHuE"
+}
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Login Endpoint (POST /api/login)
+| Field | Type |
+| ------ | ------ |
+| email | Email address |
+| password | String |
 
-## Learning Laravel
+```sh
+Sample Response
+{
+    "user": {
+        "name": "Altamash",
+        "email": "altu9595@gmail.com",
+        "updated_at": "2021-05-19 17:56:31",
+        "created_at": "2021-05-19 17:56:31",
+        "id": 2
+    },
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjMyM2NmOGY2MWFmOTBmZmVmOWVmOTJkNTkzYjE0NGU4YTkyMGZmM2Q0YzFkYmE4OWM4NTgyMjg0NTBhMjFiZDk3ZmY5NGQ3MmFlMWQ1OTkzIn0.eyJhdWQiOiIxIiwianRpIjoiMzIzY2Y4ZjYxYWY5MGZmZWY5ZWY5MmQ1OTNiMTQ0ZThhOTIwZmYzZDRjMWRiYTg5Yzg1ODIyODQ1MGEyMWJkOTdmZjk0ZDcyYWUxZDU5OTMiLCJpYXQiOjE2MjE0NDY5OTEsIm5iZiI6MTYyMTQ0Njk5MSwiZXhwIjoxNjUyOTgyOTkxLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.Oo8m1IlsXUvrPcFD2DBFdPn2iNFdBJMEDmgP3rJOk384Qd8HMPMuvjVq1V8fIzNNLOWuHnvHrznCJKkV9T_84kHDbbo-ktgGmaUcyevqlL6un9xawzCoKvIBdY-_owqs5Pgw5Hoxj0Kbwy8uMPmk5J-pAz0j_aCqfV1K10lll5xV7RoGUh1hGKnhaYORRIWcAXwIasi04neF559_rdsbEppIBlGIQZbhw_OafuYrt6LAaXnBXLpT2O4lIhP4UFvIa3eXQS73U-HtLkt187NECBj2VGVjBxqfnlaMoeks-J0aC86D2oeXcV73yrNe3EM0zhJE-Wu9mgqfFPTUovbqDtoyZ8gQ0m-REhUCo8NnSi7p6HcRf5uK8iCCQ33F-1OEYa4X7o3bXndtxIOMLYoosAuxxoKygGMA5ecnrz2GQlr0Q_7IG89PB71QTrzsMKlXGjbG8RprDMjTDMlYJZsK3VT6vaDqpEK-YKtihaII2tJbGq5HcNHwDqF-1H79nXuoCLUlz5yO2GYOih8qeV2WrDlR8z68bW-KrmjWe2mlB6-USMloFgU8G54e-BdmoLiFYgs5Ub2oT2yFcuA5SPHHRNs29CCdMC1gfaxdsRlMOZsxxzgj5A4MAxiPjmaxBlvHaPQnhwjevL90gqof4WHLH77xrCHe36Vz4eNcuMzxHuE"
+}
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Apply for a loan (POST /api/loans)
+# Need Auth Bearer token as a header - use the access_token received after login  
+| Field | Type |
+| ------ | ------ |
+| amount | float |
+| payment_frequency | String |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```sh
+#Sample Response
+{
+    "loans": {
+        "amount": "400",
+        "payment_frequency": "weekly",
+        "user_id": 1,
+        "updated_at": "2021-05-19 18:32:25",
+        "created_at": "2021-05-19 18:32:25",
+        "id": 4
+    },
+    "message": "Created successfully"
+}
+```
 
-## Laravel Sponsors
+# Approve a loan (PUT /api/loans/{1}})
+# Need Auth Bearer token as a header - use the access_token received after login 
+| Field | Type |
+| ------ | ------ |
+| approval_status | Integer |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```sh
+#Sample Response
+{
+    "loan": {
+        "id": 1,
+        "amount": "400",
+        "interest": 5,
+        "payment_frequency": "weekly",
+        "approval_status": "1",
+        "user_id": 1,
+        "created_at": "2021-05-19 13:51:25",
+        "updated_at": "2021-05-19 18:34:44"
+    },
+    "message": "Updated successfully"
+}
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
+# Start payment (Post /api/loans/repayment})
+# Need Auth Bearer token as a header - use the access_token received after login 
+| Field | Type |
+| ------ | ------ |
+| loan_id | Integer |
+| amount | float |
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```sh
+#Sample Response
+{
+    "loan": {
+        "id": 1,
+        "amount": "10",
+        "interest": 2,
+        "payment_frequency": "weekly",
+        "approval_status": "1",
+        "user_id": 1,
+        "created_at": "2021-05-19 13:51:25",
+        "updated_at": "2021-05-19 18:38:22"
+    },
+    "message": "Updated successfully"
+}
+```
